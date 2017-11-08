@@ -1,3 +1,15 @@
+##<自修改>
+sy618不再更新. 修改Padavan脚本地址指向googlehost项目。
+>https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/start.sh
+>https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/del.sh
+>https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/setting.sh
+>https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/dnsmasq.conf
+#Padavan脚本
+*一键运行命令：
+>mkdir -p /etc/storage/dnsmasq/dns;wget --no-check-certificate https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/setting.sh -O /etc/storage/dnsmasq/dns/setting.sh;sh /etc/storage/dnsmasq/dns/setting.sh
+*一键还原命令：
+>sh /etc/storage/dnsmasq/dns/del.sh
+
 <新常态>：9.19号后，封锁持续升级，这只是刚刚开始。防火墙已具备https链接识别与重置能力，都是通过关键词匹配明文信息，就如同以前针对http链接重置一样高效。YouTube、Facebook、Twitter、Dropbox等已经被加入重点封锁名单。[v2帖子](https://www.v2ex.com/t/395195)抓包发现：“在浏览器发出 TLS Client Hello 之后，就收到了 FIN,ACK、RST,ACK 等一系列试图断开连接的包，结合 VPS 那边抓包来看（ VPS 同样收到了类似的一系列包），这些包应该是伪造的。在 Wireshark 里展开那个包含 Client Hello 的包，可以看到 Server Name Indication extension 里有一个字段是 google.com ” 。除了Client Hello握手包是明文传输的，CA证书也是明文传输，再加上长期的流量统计与一些未知的特征识别，这些信息足够防火墙知道你在访问什么。使用sni服务器IP反代同样也会被链接重置，sni证书也是明文传输。拦截只针对经过出口路由上。具体原理与后续研究请看[googlehosts项目的试验](https://github.com/googlehosts/hosts/issues/87)、[v2帖子](https://www.v2ex.com/t/395195)。
 
 虽然还是可以用流量中转等方式继续使用hosts，但个人觉得靠hosts翻墙意义已不大！现决定暂停此项目维护！建议自备代理，不要依赖于hosts来上网。后会有期！！
