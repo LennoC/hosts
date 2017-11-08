@@ -1,11 +1,11 @@
-##<自修改>
+## <自修改>
 sy618不再更新. 修改Padavan脚本地址指向googlehost项目。
 >https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/start.sh
 >https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/del.sh
 >https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/setting.sh
 >https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/dnsmasq.conf
 
-##Padavan脚本
+## Padavan脚本
 *一键运行命令：
 >mkdir -p /etc/storage/dnsmasq/dns;wget --no-check-certificate https://raw.githubusercontent.com/LennoC/hosts/master/dnsmasq/sh/setting.sh -O /etc/storage/dnsmasq/dns/setting.sh;sh /etc/storage/dnsmasq/dns/setting.sh
 *一键还原命令：
