@@ -8,9 +8,13 @@ echo "·········写入配置信息···········"
 echo "* 到“dnsmasq.conf”配置文件里指向规则文件路径"
 sed -i '/\/dns\//d' /etc/storage/dnsmasq/dnsmasq.conf
 cat >> /etc/storage/dnsmasq/dnsmasq.conf << EOF
-addn-hosts=/etc/storage/dnsmasq/dns/hosts
 conf-dir=/etc/storage/dnsmasq/dns/conf
 EOF
+
+#cat >> /etc/storage/dnsmasq/dnsmasq.conf << EOF
+#addn-hosts=/etc/storage/dnsmasq/dns/hosts
+#conf-dir=/etc/storage/dnsmasq/dns/conf
+#EOF
 
 echo "* 到定时任务crontabs里写入定时执行任务"
 #零点一分执行脚本
